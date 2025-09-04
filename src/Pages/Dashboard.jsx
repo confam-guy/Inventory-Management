@@ -42,7 +42,6 @@ const DashboardHomePage = () => {
 
   return (
     <div className="flex flex-col bg-gradient-to-r from-blue-600 via-blue-400 to-red-500 min-h-screen font-sans w-full">
-
       {/* Dashboard Top Navigation */}
       <DashboardNav
         name={currentUser?.displayName || "Mathias"}
@@ -51,43 +50,41 @@ const DashboardHomePage = () => {
       />
 
       {/* Scrollable Dashboard Area */}
-      <div className="flex-1 p-4 sm:p-6 overflow-y-auto w-full">
-
+      <div className="flex-1 p-2 sm:p-4 lg:p-6 overflow-y-auto w-full">
         {/* Top Overview Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-4 sm:mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-3 sm:mb-4 lg:mb-6">
           <TopOverviewCard title="Total balance" value="$425.35" change="12.5%" type="decrease" className="bg-amber-400"/>
           <TopOverviewCard title="Customers" value="267" change="12.5%" type="decrease" />
           <TopOverviewCard title="Income" value="$450" change="25.5%" type="increase" />
           <motion.div
-            className="bg-white p-6 rounded-l-xl shadow-md flex flex-col justify-between"
+            className="bg-white p-4 sm:p-5 lg:p-6 rounded-lg shadow-md flex flex-col justify-between"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.5 }}
           >
-            <h3 className="text-xl font-bold text-gray-800">Total balance</h3>
-            <p className="text-3xl font-bold text-green-500">$425.35</p>
-            <p className="text-gray-500 text-sm">17 July 2025 03:35 PM</p>
+            <h3 className="text-lg sm:text-xl font-bold text-gray-800">Total balance</h3>
+            <p className="text-2xl sm:text-3xl font-bold text-green-500">$425.35</p>
+            <p className="text-gray-500 text-xs sm:text-sm">17 July 2025 03:35 PM</p>
           </motion.div>
         </div>
 
         {/* Main sections */}
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 sm:gap-6">
-
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
           {/* Analytics */}
           <motion.div
-            className="md:col-span-2 lg:col-span-2 bg-white p-6 rounded-xl shadow-md"
+            className="sm:col-span-2 bg-white p-4 sm:p-5 lg:p-6 rounded-lg shadow-md"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-2xl font-bold text-gray-800 mb-2">Analytics</h2>
-            <div className="flex flex-wrap space-x-2 sm:space-x-4 mb-4 text-sm font-semibold"> 
-                <span className="text-blue-600">Customers</span>
-                <span className="text-gray-600 hover:text-blue-600 cursor-pointer">Projects</span>
-                <span className="text-gray-600 hover:text-blue-600 cursor-pointer">Income</span>
-                <span className="text-gray-600 hover:text-blue-600 cursor-pointer">Monthly</span>
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Analytics</h2>
+            <div className="flex flex-wrap gap-2 sm:gap-4 mb-3 sm:mb-4 text-xs sm:text-sm font-semibold">
+              <span className="text-blue-600">Customers</span>
+              <span className="text-gray-600 hover:text-blue-600 cursor-pointer">Projects</span>
+              <span className="text-gray-600 hover:text-blue-600 cursor-pointer">Income</span>
+              <span className="text-gray-600 hover:text-blue-600 cursor-pointer">Monthly</span>
             </div>
-            <ResponsiveContainer width="100%" height={300}>
+            <ResponsiveContainer width="100%" height={250} minHeight={200}>
               <BarChart data={chartData}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} />
                 <XAxis dataKey="name" axisLine={false} tickLine={false} />
@@ -103,17 +100,17 @@ const DashboardHomePage = () => {
 
           {/* Withdraw */}
           <motion.div
-            className="col-span-1 bg-white h-115 p-6 rounded-l-xl shadow-md flex flex-col justify-between"
+            className="bg-white p-4 sm:p-5 lg:p-6 rounded-lg shadow-md flex flex-col justify-between"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-xl font-bold text-gray-800">Select a card to withdraw money</h3>
-            <div className="space-y-4 mt-3">
+            <h3 className="text-lg sm:text-xl font-bold text-gray-800">Select a card to withdraw money</h3>
+            <div className="space-y-3 sm:space-y-4 mt-2 sm:mt-3">
               {withdrawalCards.map((card) => (
                 <WithdrawalCardOption key={card.id} {...card} />
               ))}
-              <button className="bg-blue-600 text-white px-20 py-3 rounded-lg hover:bg-blue-700 w-full font-semibold">
+              <button className="bg-blue-600 text-white px-4 sm:px-8 lg:px-20 py-2 sm:py-3 rounded-lg hover:bg-blue-700 w-full font-semibold text-sm sm:text-base">
                 Confirm
               </button>
             </div>
@@ -121,21 +118,21 @@ const DashboardHomePage = () => {
 
           {/* Today */}
           <motion.div
-            className="md:col-span-2 lg:col-span-2 bg-white p-6 rounded-xl shadow-md"
+            className="sm:col-span-2 bg-white p-4 sm:p-5 lg:p-6 rounded-lg shadow-md"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Today</h2>
-            <div className="grid grid-cols-2 gap-3">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Today</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
               {todayProjects.map((project) => (
                 <ProjectCard key={project.id} {...project} />
               ))}
             </div>
-            <div className="flex justify-center mt-6">
-              <button className="text-blue-600 font-semibold flex items-center">
+            <div className="flex justify-center mt-4 sm:mt-6">
+              <button className="text-blue-600 font-semibold flex items-center text-sm sm:text-base">
                 Show more
-                <span className="ml-2 w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+                <span className="ml-2 w-6 sm:w-8 h-6 sm:h-8 bg-gray-200 rounded-full flex items-center justify-center">
                   <span className="text-xs text-gray-600">...</span>
                 </span>
               </button>
@@ -143,34 +140,33 @@ const DashboardHomePage = () => {
           </motion.div>
 
           {/* New Clients & New Projects */}
-          <div className='grid gap-3'>
+          <div className="grid gap-3 sm:gap-4">
             <motion.div
-              className="col-span-1 bg-white p-6 rounded-l-xl shadow-md flex flex-col items-center"
+              className="bg-white p-4 sm:p-5 lg:p-6 rounded-lg shadow-md flex flex-col items-center"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: 0.6 }}
             >
-              <FiUsers className="text-blue-600 text-4xl space-y-4 mt-3" />
+              <FiUsers className="text-blue-600 text-3xl sm:text-4xl mb-3 sm:mb-4" />
               <div>
-                <h2 className="text-xl font-bold text-gray-800">New Clients</h2>
-                <p className="text-gray-600">You have 7 clients</p>
+                <h2 className="text-lg sm:text-xl font-bold text-gray-800">New Clients</h2>
+                <p className="text-gray-600 text-sm sm:text-base">You have 7 clients</p>
               </div>
             </motion.div>
 
             <motion.div
-              className="col-span-1 bg-white p-6 rounded-l-xl shadow-md flex flex-col items-center"
+              className="bg-white p-4 sm:p-5 lg:p-6 rounded-lg shadow-md flex flex-col items-center"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: 0.8 }}
             >
-              <FiBriefcase className="text-blue-600 text-4xl space-y-4 mt-3" />
+              <FiBriefcase className="text-blue-600 text-3xl sm:text-4xl mb-3 sm:mb-4" />
               <div>
-                <h2 className="text-xl font-bold text-gray-800">New Project</h2>
-                <p className="text-gray-600">You have 23 projects</p>
+                <h2 className="text-lg sm:text-xl font-bold text-gray-800">New Project</h2>
+                <p className="text-gray-600 text-sm sm:text-base">You have 23 projects</p>
               </div>
             </motion.div>
           </div>
-
         </div>
       </div>
     </div>

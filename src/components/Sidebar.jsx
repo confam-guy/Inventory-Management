@@ -62,7 +62,7 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
           exit="exit"
           variants={sidebarVariants}
           className="fixed top-0 left-0 w-64 h-screen 
-            bg-white/20 backdrop-blur-xl shadow-xl 
+            bg-white/20 text-amber-300 backdrop-blur-xl shadow-xl 
             border-r border-white/30 rounded-r-2xl z-50 flex flex-col"
         >
           {/* === SIDEBAR HEADER === */}
@@ -111,8 +111,8 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
                       }`
                     }
                   >
-                    <span className="text-xl">{icon}</span>
-                    <span className="text-sm font-medium">{label}</span>
+                    <span className="text-xl text-black">{icon}</span>
+                    <span className="text-sm font-medium text-black">{label}</span>
                   </NavLink>
                 </motion.li>
               ))}
