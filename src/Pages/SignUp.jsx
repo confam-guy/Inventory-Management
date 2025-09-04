@@ -1,5 +1,5 @@
 import { useNavigate, Link } from 'react-router-dom';
-import { useAuth } from '../Components/AuthContext';
+import { useAuth } from '../components/AuthContext';
 import { useState } from 'react';
 
 const SignupPage = () => {
