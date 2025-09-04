@@ -1,6 +1,6 @@
 import React from 'react';
 import Sidebar from '../components/Sidebar';
-import { useAuth } from '../Components/AuthContext';
+import { useAuth } from '../components/AuthContext';
 import { motion } from 'framer-motion';
 import { FiPlus, FiBriefcase } from 'react-icons/fi';
 
