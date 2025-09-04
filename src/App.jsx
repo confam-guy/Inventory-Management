@@ -13,13 +13,13 @@ import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
 
 // Components
-import Navbar from "./Components/Navbar";
+import Navbar from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SidebarLayout from "./components/SidebarLayout"; // ✅ Import SidebarLayout
-import Clients from "./Components/Clients";
+import Clients from "./components/Clients";
 import Projects from "./components/Projects";
 import Transactions from "./components/Transactions";
-import Account from "./Components/Account";
+import Account from "./components/Account";
 import WithdrawMoney from "./components/WithdrawMoney";
 import Reminder from "./components/Reminder";
 import PrivacySettings from "./components/PrivacySettings";
