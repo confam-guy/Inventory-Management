@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Sidebar from '../components/Sidebar';
-import { useAuth } from '../Components/AuthContext';
+import { useAuth } from '../components/AuthContext';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import toast, { Toaster } from 'react-hot-toast';
 

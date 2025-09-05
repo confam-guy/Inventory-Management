@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
-import { useAuth } from '../Components/AuthContext';
+import { useAuth } from '../components/AuthContext';
 import TopOverviewCard from '../components/TopOverviewCard';
 import ProjectCard from '../components/ProjectCard';
 import WithdrawalCardOption from '../components/WithdrawalCardOption';

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../Components/AuthContext';
+import { useAuth } from '../components/AuthContext';
 import { useState } from 'react'; // Import useState for error message
 
 // This is a placeholder for your actual Login page
